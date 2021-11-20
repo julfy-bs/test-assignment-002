@@ -1,0 +1,35 @@
+// breakpoints
+$mobile: 768px; // up to
+$tablet: 769px; // from
+$max-content: 1128px; // from
+
+// fonts
+$font-family-regular: 'SourceSansPro-Regular', arial, sans-serif;
+$font-family-light: 'SourceSansPro-Light', arial, sans-serif;
+$font-family-bold: 'SourceSansPro-Bold', arial, sans-serif;
+
+// fonts size
+
+$font-size-block-heading: 28px;
+$font-size-block-heading-mobile: 20px;
+
+$font-size-body-1: 22px;
+$font-size-body-1-mobile: 18px;
+$font-size-body-2: 18px;
+$font-size-body-2-mobile: 16px;
+$font-size-body-3: 16px;
+$font-size-body-3-mobile: 14px;
+
+// colors
+
+$text-primary: #3F3F3F;
+$text-transparent: #B4B4B4;
+$text-form-heading: #49485E;
+
+$background-default: #E5E5E5;
+$background-item-default:  #FFFEFB, 80%;
+
+$button-text-color-active: #FFF;
+$button-background-active: #7BAE73;
+$button-background-disabled: #EEE;
+$button-text-color-disabled: #B4B4B4;

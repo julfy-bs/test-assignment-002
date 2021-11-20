@@ -1,0 +1,17 @@
+@import "assets/styles/variables";
+
+html,
+body {
+  font-family: $font-family-regular;
+  color: $text-primary;
+
+  h1 {
+    font-family: $font-family-bold;
+    font-size: $font-size-block-heading;
+    line-height: 35px;
+
+    @media (max-width: $tablet) {
+      font-size: $font-size-block-heading-mobile;
+    }
+  }
+}
