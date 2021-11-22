@@ -3,7 +3,6 @@
     <div class='header__title'><h1>Добавление товара</h1></div>
     <div class='header__sort sort'>
       <form action='' class='sort__form'>
-        <!-- todo: select animation -->
         <select class='sort__select'>
           <option class='sort__option' value='#' selected>По умолчанию</option>
         </select>
@@ -47,7 +46,10 @@ export default {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   color: $text-transparent;
+  transition: $transition-default;
+
+  &:focus {
+    outline-color: $button-background-active;
+  }
 }
-
-
 </style>

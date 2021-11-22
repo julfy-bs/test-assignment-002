@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import TheHeader from '@/components/TheHeader'
+import TheHeader from '@/components/Header'
 
 export default {
   components: {
@@ -16,9 +16,13 @@ export default {
 </script>
 
 <style lang='scss'>
+@import "assets/styles/variables";
+
 .container {
-  width: 95%;
+  width: 100%;
+  padding: 0 32px;
   margin: 0 auto;
   max-width: 1440px;
+  min-height: 100vh;
 }
 </style>

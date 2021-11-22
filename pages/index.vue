@@ -1,6 +1,16 @@
 <template>
   <main class='main'>
-    <AddCart/>
+    <AddCard />
+    <div class='cards'>
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+    </div>
   </main>
 </template>
 
@@ -10,9 +20,25 @@ export default {
 }
 </script>
 
-<style>
+<style lang='scss'>
+@import "assets/styles/variables";
+
 .main {
-  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100%;
+
+  .cards {
+    display: flex;
+    flex-flow: row wrap;
+    margin-left: -16px;
+  }
+
+  // media
+
+  @media (max-width: $mobile) {
+    flex-direction: column;
+  }
 }
 </style>
 
