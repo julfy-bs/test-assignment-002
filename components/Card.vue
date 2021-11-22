@@ -1,20 +1,65 @@
 <template>
-  <div class='card__item card'>
+  <div class='card'>
     <button class='card__delete'></button>
-    <div class='card__image'></div>
+    <div :style='cssProps.backgroundImage' class='card__image'></div>
     <div class='card__content'>
-      <h3 class='card__heading'>Наименование товара</h3>
-      <p class='card__text'>Довольно-таки интересное описание товара в несколько строк. Довольно-таки интересное
-        описание товара в несколько строк. Довольно-таки интересное описание товара в несколько строк. Довольно-таки
-        интересное описание товара в несколько строк. Довольно-таки интересное описание товара в несколько строк.</p>
-      <span class='card__price'>10 000 руб.</span>
+      <h3 class='card__heading'>{{ card.name }}</h3>
+      <p class='card__text'>{{ card.description }}</p>
+      <span class='card__price'>{{ numberMask }} руб.</span>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Card'
+  name: 'Card',
+  props: {
+    card: {
+      type: Object,
+      // eslint-disable-next-line vue/require-valid-default-prop
+      default: {
+        id: {
+          type: Number,
+          required: true
+        },
+        name: {
+          type: String,
+          required: true
+        },
+        url: {
+          type: String,
+          required: true
+        },
+        price: {
+          type: String,
+          required: true
+        },
+        description: {
+          type: String,
+          default: 'Довольно-таки интересное описание товара в несколько строк.'
+        }
+      }
+    }
+  },
+  data() {
+    return {
+      isChange: false,
+      price: 0,
+      cssProps: {
+        backgroundImage: `background-image: url(${this.card.url})`
+      }
+    }
+  },
+  computed: {
+    numberMask: {
+      get() {
+        return this.isChange ? this.card.price : this.card.price.toLocaleString()
+      },
+      set(value) {
+        this.price = +value.replace(/\s/g, '')
+      }
+    }
+  },
 }
 </script>
 
@@ -23,6 +68,7 @@ export default {
 
 .card {
   flex: 1 1 30%;
+  min-width: 300px;
   margin: 0 0 16px 16px;
   width: 100%;
   max-height: 423px;
@@ -57,7 +103,10 @@ export default {
   }
 
   &:hover {
+    cursor: pointer;
+
     .card__delete {
+      cursor: pointer;
       opacity: 1;
     }
   }
