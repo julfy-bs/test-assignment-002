@@ -1,6 +1,6 @@
 <template>
   <div class='card'>
-    <button class='card__delete'></button>
+    <button class='card__delete' @click='removeCard(card)'></button>
     <div :style='cssProps.backgroundImage' class='card__image'></div>
     <div class='card__content'>
       <h3 class='card__heading'>{{ card.name }}</h3>
@@ -60,6 +60,11 @@ export default {
       }
     }
   },
+  methods: {
+    removeCard(card) {
+      this.$store.commit('cards/REMOVE_CARD', card)
+    }
+  }
 }
 </script>
 
@@ -68,7 +73,8 @@ export default {
 
 .card {
   flex: 1 1 30%;
-  min-width: 300px;
+  //min-width: 200px;
+  max-width: calc(50% - 16px);
   margin: 0 0 16px 16px;
   width: 100%;
   max-height: 423px;
@@ -122,6 +128,8 @@ export default {
 
     .card__heading {
       margin-bottom: 16px;
+      overflow: hidden;
+      max-height: 25px;
     }
 
     .card__text {
@@ -152,6 +160,7 @@ export default {
 
   @media (max-width: $tablet) {
     flex: 1 1 100%;
+    max-width: none;
     .card__content {
       .card__text {
         margin-bottom: 22px;

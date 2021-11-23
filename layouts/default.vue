@@ -1,20 +1,8 @@
 <template>
   <div class='container'>
-    <TheHeader />
     <Nuxt />
   </div>
 </template>
-
-<script>
-import TheHeader from '@/components/Header'
-
-export default {
-  components: {
-    TheHeader
-  }
-}
-</script>
-
 <style lang='scss'>
 @import "assets/styles/variables";
 
