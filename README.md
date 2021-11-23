@@ -1,5 +1,9 @@
 # idaproject-test
 
+1) git clone https://github.com/julfy-bs/idaproject-test
+2) git install
+3) npm run dev
+
 ## Build Setup
 
 ```bash
