@@ -2,6 +2,7 @@
   "name": "idaproject-test",
   "version": "1.0.0",
   "author": "Bogdan Sutuzhko <bogdan.sutuzhko.19@gmail.com>",
+  "repository": "https://github.com/julfy-bs/idaproject-test.git",
   "keywords": [],
   "private": true,
   "scripts": {
